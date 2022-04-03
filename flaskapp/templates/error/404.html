@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <div class="wrapper">
+        <h1>
+            Oops: 404 NOT FOUND
+        </h1>
+
+        <p>If you see this page, then we where not able to find the page you where looking for.</p>
+
+        <p><em>Try, again, or go to <a href="{{ url_for('main.index') }}">home.</a></em></p>        
+    </div>
+{% endblock body %}

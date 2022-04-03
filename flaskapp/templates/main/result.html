@@ -1,0 +1,19 @@
+{% extends 'base.html' %} {% block body %}
+<main class="wrapper">
+  <div
+    class="container-sm shadow p-3 mt-5 mb-5 bg-body rounded border border-dark text-center"
+  >
+    <h3 class="p-3">Result</h3>
+
+    <div class="form-outline">
+      <textarea class="form-control p-3" id="textAreaExample" rows="15">
+{{ text | safe }}</textarea
+      >
+    </div>
+    <p></p>
+    <button onclick='window.location.href="{{ url_for('main.ocr') }}";' type="button" class="btn btn-primary p-3">
+      Convert another image
+    </button>
+  </div>
+</main>
+{% endblock body %}

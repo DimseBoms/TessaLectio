@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    {% if title %}
+    <title>{{ title }} - OCR</title>
+    {% else %}
+    <title>OCR</title>
+    {% endif %}
+    <!-- MDB icon -->
+    <link
+      rel="icon"
+      href="{{ url_for('static', filename='img/favicon.png') }}"
+      type="image/x-icon"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+    />
+    <!-- Google Fonts Roboto -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+    />
+    <!-- MDB -->
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='css/mdb.min.css') }}"
+    />
+    <!-- Custom styles -->
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+
+  <!-- Start your project here-->
+
+  <body style="
+  background: url(../static/img/background.jpg)
+    no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  ">
+
+<div class="min-vh-100">
+
+    <header>
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+          <a class="navbar-brand" href="{{ url_for('main.welcome') }}"
+            ><span style="color: #ffd43b">Tessa</span
+            ><span style="color: #4b8bbe">Lectio</span></a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-mdb-toggle="collapse"
+            data-mdb-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <i class="fas fa-bars"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('main.welcome') }}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('main.ocr') }}">OCR</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('main.about') }}">About</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- Navbar -->
+
+        <!-- show "flash" messages -->
+        <div style="container">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          {% for category, message in messages %}
+            <div id="flash" class="text-center alert alert-{{ category }}"
+            style="position: absolute;
+                   left: 0;
+                   right: 0;
+                   ">
+              {{ message }}
+            </div>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+    </div>
+    
+    {% block body %} {% endblock body %}
+    
+  </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-center text-white mt-auto">
+      <!-- Grid container -->
+      <div class="container p-4 pb-0">
+        <!-- Section: Form -->
+        <section class="">
+          <form action="">
+            <!--Grid row-->
+            <div class="row d-flex justify-content-center">
+  
+              <!--Grid column-->
+              <div class="col-md-5 col-12">
+                <!-- Email -->
+                <p class="pt-2">
+                  <strong>Contact us at:</strong>
+                  <strong>
+                    <a href = "mailto: etellerannet@epost.no" class="text-white">etellerannet@epost.no</a>
+                  </strong>
+                  <img src="../static/img/email.png" class="img-fluid rounded m-2" alt="">
+                </p>
+              </div>
+              <!--Grid column-->
+            </div>
+            <!--Grid row-->
+          </form>
+        </section>
+        <!-- Section: Form -->
+      </div>
+      <!-- Grid container -->
+    <!-- GitHub -->
+    <!--
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      GitHub:
+      <a class="text-white m-2" href="https://mdbootstrap.com/">ProsjektNavn</a>
+      <img src="../static/img/GitHub.png" class="img-fluid rounded m-2" alt="">
+    </div>-->
+    <!-- GitHub -->
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © {{ current_year }} Copyright: Gruppe-10
+      </div>
+      <!-- Copyright -->
+    </footer>
+      <!-- Footer -->
+    </div>
+    <!-- End of .container -->
+
+    <!-- End your project here-->
+
+    <!-- MDB -->
+    <script
+      type="text/javascript"
+      src="{{ url_for('static', filename='js/mdb.min.js') }}"
+    ></script>
+    <!-- Custom scripts -->
+    <script
+      type="text/javascript"
+      src="{{ url_for('static', filename='js/script.js') }}"
+    ></script>
+      <!-- JS -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  </body>
+</html>

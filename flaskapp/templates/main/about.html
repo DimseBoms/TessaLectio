@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<div class="container-sm shadow p-5 mt-5 mb-5 bg-body rounded border border-dark">
+  <h1 class="mb-3 h4">Why Tesseract</h1>
+  <hr class="my-4" />
+  <p>
+    When we started looking for an OCR to use for our website we set out a couple of criteria.
+  </p>
+  <ol class="font-weight-light">
+    <li>It had to be free to use</li>
+    <li>The technology must be open source and without any strict licensing</li>
+    <li>It needed to work well for our planned system architecture</li>
+  </ol>
+  <p>
+    Allthough some of the other OCR engines had better performance, Tesseract was the only OCR engine we were able to find without funky restrictions or
+    unecessary hoops you had to jump through to be able to use the engine freely. The engine was originally developed by Hewlett Packard in the 80s and 90s for use in
+    their scanners. During the 80s, 90s and 00s the technology was considered to be among the top performing OCR engines. So good actually that it has managed to
+    stay relevant even today. Tesseract was made open source in 2005.
+  </p>
+  <hr class="my-4" />
+  <p>We are a group of five students who have been working on this project as a school assignment this semester. The project saw it's conception in January 2020.
+  </p>
+</div>
+
+<div class="container-sm shadow p-2 mt-5 mb-5 bg-body rounded border border-dark">
+    <main class="wrapper">
+        <div class="">
+            <div class="container-sm py-5">
+              <div class="row mb-4 justify-content-center">
+                <div class="col-lg-5">
+                  <h2 class="text-center">Our team</h2>
+                </div>
+              </div>
+          
+              <hr class="my-4" />
+
+              <div class="container">
+                <div class="row justify-content-center">
+                  <!-- Team Member 1 -->
+                  <div class="col-sm-3 mb-4">
+                    <div class="card border-0 shadow">
+                      <img src={{ url_for('static', filename='img/portretter/daniel.jpg') }} class="card-img-top" alt="...">
+                      <div class="card-body text-center">
+                        <h5 class="card-title mb-0">Daniel Vikan</h5>
+                        <div class="card-text text-black-50">Product owner</div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Team Member 4 -->
+                  <div class="col-sm-3 mb-4">
+                    <div class="card border-0 shadow">
+                      <img src={{ url_for('static', filename='img/portretter/martin.png') }} class="card-img-top" alt="...">
+                      <div class="card-body text-center">
+                        <h5 class="card-title mb-0">Martin Andre Håøy Braa</h5>
+                        <div class="card-text text-black-50">Scrum Master</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row justify-content-center">
+                  <!-- Team Member 2 -->
+                  <div class="col-sm-3 mb-4">
+                    <div class="card border-0 shadow">
+                      <img src={{ url_for('static', filename='img/portretter/artur.jpg') }} class="card-img-top" alt="...">
+                      <div class="card-body text-center">
+                        <h5 class="card-title mb-0">Artur Lobocki</h5>
+                        <div class="card-text text-black-50">Developer</div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Team Member 3 -->
+                  <div class="col-sm-3 mb-4">
+                    <div class="card border-0 shadow">
+                      <img src={{ url_for('static', filename='img/portretter/leander.jpg') }} class="card-img-top" alt="...">
+                      <div class="card-body text-center">
+                        <h5 class="card-title mb-0">Leander Gangsø</h5>
+                        <div class="card-text text-black-50">Backend Developer</div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Team Member 5 -->
+                  <div class="col-sm-3 mb-4">
+                    <div class="card border-0 shadow">
+                      <img src={{ url_for('static', filename='img/portretter/dima.jpg') }} class="card-img-top" alt="...">
+                      <div class="card-body text-center">
+                        <h5 class="card-title mb-0">Dmitriy Safiullin</h5>
+                        <div class="card-text text-black-50">Frontend Developer</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.row -->
+              
+                <hr class="my-4" />
+
+              </div>
+
+    </main>
+  </div>
+{% endblock body %}

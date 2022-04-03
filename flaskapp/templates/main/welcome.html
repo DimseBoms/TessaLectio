@@ -1,0 +1,27 @@
+{% extends 'base.html' %} {% block body %}
+
+<div class="container-sm shadow p-5 mt-5 mb-5 bg-body rounded border border-dark">
+  <h1 class="mb-3 h4">Welcome to TessaLectio OCR website</h1>
+  <hr class="my-4" />
+  <p>
+
+    Welcome to our OCR website. The purpose of this website is to serve as a user interface for our OCR server.<br><br>
+    OCR is an acronym for Optical Character Recognition and the technology is primarily used to convert images of documents 
+    or text into a workable format that you can manipulate afterwards with a computer. Our application is using the Tesseract OCR originally developed by
+    HP for use in their printers. Allthough it isn't the most accurate OCR by todays standards, Tesseract was considered one if the top 
+    OCR engines in 2006.<br><br>
+    
+    The engine was quite ahead of its time considering the fact that it stayed among the top contenders for almost 15 years!
+
+  </p>
+
+  <hr class="my-4" />
+
+  <div class="text-center">
+    <button onclick='window.location.href="{{ url_for('main.ocr') }}";' type="button" class="btn btn-primary text-center mt-5 p-3">
+      Convert image
+    </button>
+  </div>
+  
+</div>
+{% endblock body %}

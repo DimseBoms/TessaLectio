@@ -1,0 +1,79 @@
+{% extends 'base.html' %} {% block body %}
+
+    <div class="container-sm shadow p-3 mt-5 mb-5 bg-body rounded border border-dark text-center">
+
+      <h3>Image to text converter</h3>
+
+    <form
+      action="{{ url_for('main.result') }}"
+      method="post"
+      enctype="multipart/form-data"
+    >
+      <input type="hidden" name="token" value="{{ token }}" />
+
+      <p class="info_text p-3">
+        1. Choose a file to convert.<br /><small>(png, jpg, jpeg)</small>
+      </p>
+      <label id="upload-label" for="upload" class="btn p-3">Upload</label>
+      <p></p>
+      <input
+        required
+        id="upload"
+
+        type="file"
+        name="image"
+        value="this is a value"
+        hidden
+      />
+      <span id="file-chosen" class="p-3">(No file selected)</span>
+
+      <p class="info_text p-3">2. Choose processing method.</p>
+      <label class="container">
+        <input type="radio" name="option" value="none" />
+        <span class="checkmark"></span>
+        Don't process
+      </label>
+      <label class="container">
+        <input type="radio" name="option" value="blur" checked />
+        <span class="checkmark"></span>
+        Blur reduction
+      </label>
+      <label class="container">
+        <input type="radio" name="option" value="thresh" />
+        <span class="checkmark"></span>
+        Thresholding
+      </label>
+
+      <p class="info_text p-3">3. Extract text from image.</p>
+        <label id="submitLabel" for="submit" class="btn disabled">Convert</label>
+      <input id="submit" type="submit" hidden />
+    </form>
+  </main>
+</div>
+
+<script>
+const actualBtn = document.getElementById('upload');
+const fileChosen = document.getElementById('file-chosen');
+const uploadButton = document.getElementById('submitLabel');
+const submitBtn = document.getElementById('submit');
+const uploadBtn = document.getElementById('upload-label');
+
+// Show the file selected for upload
+actualBtn.addEventListener('change', function() {
+    fileChosen.textContent = this.files[0].name
+    uploadBtn.style.backgroundColor = 'var(--main-color)';
+    fileChosen.style.color = 'black';
+});
+
+// Enable submit button on file upload
+
+document.getElementById('upload').onchange = function() {
+    submitLabel.classList.remove('disabled');
+    submitLabel.classList.add('btn-primary')
+};
+</script>
+
+<!--
+<script src={{ url_for('static', filename='js/ocr.js') }}></script>
+-->
+{% endblock body %}

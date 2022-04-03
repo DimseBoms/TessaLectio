@@ -1,0 +1,39 @@
+/**************
+ alert warnings
+**************/
+
+
+.alert {
+    text-align: center;
+    color: black;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    padding: 1.2rem 0 1rem;
+}
+
+.alert-primary{
+    background-color: #CCE5FF;
+    color: rgb(27, 99, 151);
+}
+
+.alert-info{
+    background-color:#D1ECF1;
+    color: rgb(78, 141, 161);
+}
+
+.alert-success{
+    background-color: #D4EDDA;
+    color: #758578;
+}
+
+.alert-warning{
+    background-color: #FFF3CD;
+    color: #76705e;
+}
+
+.alert-danger{
+    background-color: #F8D7DA;
+    color: #837172;
+}
